@@ -1,0 +1,31 @@
+server:
+  port: 9090
+
+spring:
+  application:
+    name: zuul-gateway
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://kris:123456@127.0.0.1:8199/eureka
+    register-with-eureka: true
+    fetch-registry: true
+
+zuul:
+  routes:
+    service1:
+      path: /service1
+      serviceId: microservices-service-1, microservices-service-1-master
+    service2:
+      path: /service2
+      serviceId: microservices-service-2
+
+info:
+  service:
+    name: zuul gateway master
+  company:
+    name: www.kris.com
+  build:
+    artifactId: @project.artifactId@
+    version: @project.version@

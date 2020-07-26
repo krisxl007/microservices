@@ -1,0 +1,22 @@
+server:
+  port: 8083
+
+spring:
+  application:
+    name: microservices-service-2
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://kris:123456@127.0.0.1:8199/eureka
+    register-with-eureka: true
+    fetch-registry: true
+
+info:
+  service:
+    name: service 2 master
+  company:
+    name: www.kris.com
+  build:
+    artifactId: @project.artifactId@
+    version: @project.version@
